@@ -1,0 +1,299 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    overflow: hidden;
+    background: url('../media/taustakuva.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #333;
+    padding: 5px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #555f5e;
+    border-radius: 5px;
+}
+
+.logo {
+    display: block;
+    margin-top: 80px; 
+    max-width: 250px; 
+    height: auto;
+}
+
+.main {
+    margin-top: 10px; 
+    max-width: 600px;
+    padding: 10px 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: #333;
+}
+
+  .table-container {
+    width: 50%; 
+    margin: 20px auto; 
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+th, td {
+    border: 1px solid #ccc; 
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+td {
+    background-color: #565151;
+    color: white;   
+}
+
+
+.container {
+    margin-top: 70px; 
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.card-front {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #13b8a5; 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.3);
+}
+.card-back a:hover {
+    background-color: #0f8e7e;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 800px) {
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+
+
+.light-mode .navbar {
+    background-color: #ddd;
+    color: black;
+}
+
+.light-mode .navbar a {
+    color: black;
+}
+
+.light-mode .navbar a:hover {
+    background-color: #bbb;
+}
+
+.light-mode .footer {
+    background-color: #ddd;
+    color: black;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    background: #13b8a5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    background: #0f8e7e;
+}
+
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .hero {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .logo {
+        max-width: 180px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .table-container {
+        width: 90%;  
+        overflow-x: auto;  
+        margin: 10px auto; 
+        max-height: 80vh; 
+    }
+
+    table {
+        width: 100%;
+        min-width: 300px; 
+    }
+
+    th, td {
+        padding: 10px;  
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+
+    .card {
+        width: 180px;
+        height: 280px;
+    }
+}
