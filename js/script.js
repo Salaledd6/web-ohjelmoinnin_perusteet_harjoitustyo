@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // tarkistaa localstoragesta teeman 
+        // tarkistaa localstoragesta teeman 
     if (localStorage.getItem("theme") === "light") {
         body.classList.add("light-mode");
     }
